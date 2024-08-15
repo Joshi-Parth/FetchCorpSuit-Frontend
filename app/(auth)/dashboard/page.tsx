@@ -5,9 +5,14 @@
 import { useEffect, useState } from 'react';
 import { Container, List, ListItem, ListItemButton, ListItemText, Typography, TextField, Button, Box, Paper, Grid } from '@mui/material';
 
+interface Meeting {
+    id: string;
+    details?: unknown; // Adjust the type of details based on your actual data structure
+}
+
 
 export default function Dashboard() {
-  const [meetings, setMeetings] = useState([]);
+  const [meetings, setMeetings] = useState<Meeting[]>([]);
   const [selectedMeeting, setSelectedMeeting] = useState(null);
   const [query, setQuery] = useState('');
   const [queryResult, setQueryResult] = useState('');
