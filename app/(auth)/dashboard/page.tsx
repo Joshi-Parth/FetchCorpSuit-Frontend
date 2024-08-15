@@ -18,10 +18,20 @@ export default function Dashboard() {
         .then((res) => res.json())
         .then((data) => {
             if (data.transcripts) {
-            const meetingsArray = Object.entries(data.transcripts).map(([id, details]) => ({
-                id,
-                ...details,
-            }));
+            const meetingsArray = Object.entries(data.transcripts).map(([id, details]) => {
+                if (typeof details === 'object' && details !== null) {
+                    return {
+                        id,
+                        ...details,
+                    };
+                } else {
+                    // If details is not an object, handle it differently
+                    return {
+                        id,
+                        details, // or you can format it as per your requirement
+                    };
+                }
+            });
             setMeetings(meetingsArray);
             }
         })
@@ -103,7 +113,7 @@ export default function Dashboard() {
                       sx={{ marginBottom: 2, backgroundColor: "white" }}
                       rows={4}
                     />
-                    <Button variant="contained" color="primary" onClick={handleQuerySubmit}>
+                    <Button variant="contained" sx={{ marginBottom: 2, color: "white" }} color="primary" onClick={handleQuerySubmit}>
                       Ask
                     </Button>
                     {queryResult && (
