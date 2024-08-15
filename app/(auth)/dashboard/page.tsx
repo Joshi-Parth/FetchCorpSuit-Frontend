@@ -8,12 +8,13 @@ import { Container, List, ListItem, ListItemButton, ListItemText, Typography, Te
 interface Meeting {
     id: string;
     details?: unknown; // Adjust the type of details based on your actual data structure
+    topic?: string;
 }
 
 
 export default function Dashboard() {
   const [meetings, setMeetings] = useState<Meeting[]>([]);
-  const [selectedMeeting, setSelectedMeeting] = useState(null);
+  const [selectedMeeting, setSelectedMeeting] = useState<Meeting | null>(null);
   const [query, setQuery] = useState('');
   const [queryResult, setQueryResult] = useState('');
 
@@ -43,13 +44,19 @@ export default function Dashboard() {
         .catch((error) => console.error('Error fetching meetings:', error));
     }, []);
 
-    function handleMeetingSelect(meeting) {
+    function handleMeetingSelect(meeting: Meeting) {
         setSelectedMeeting(meeting);
         setQuery(''); // Reset the query input when a new meeting is selected
         setQueryResult(''); // Reset the query result when a new meeting is selected
     }
     
     function handleQuerySubmit() {
+
+        if (!selectedMeeting) {
+            console.error("No meeting selected");
+            return;
+        }
+
         const apiEndpoint = `http://127.0.0.1:5000/ask-meeting/${selectedMeeting.id}`; // Replace with your GPT API endpoint
         const requestBody = { 
             query: query  // The user's query
@@ -91,7 +98,7 @@ export default function Dashboard() {
                       disablePadding
                     >
                       <ListItemButton onClick={() => handleMeetingSelect(meeting)}>
-                        <ListItemText primary={meeting.topic} />
+                        <ListItemText primary={meeting && meeting.topic} />
                       </ListItemButton>
                     </ListItem>
                   ))}
