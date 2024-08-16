@@ -45,8 +45,8 @@ export default function Features() {
                   <circle className="stroke-current text-purple-100" cx="11" cy="11" r="11" />
                 </g>
               </svg>
-              <h4 className="h4 mb-2">Slack Integration</h4>
-              <p className="text-lg text-gray-400 text-center">Keep your team on the same page with meeting updates, ensuring everyone stays informed and aligned</p>
+              <h4 className="h4 mb-2">Intuitive Dashboard</h4>
+              <p className="text-lg text-gray-400 text-center">Query specific meeting details on the fly and get instant responses powered by advanced NLP.</p>
             </div>
             
             {/* 4th item */}
@@ -58,8 +58,8 @@ export default function Features() {
                   <circle className="stroke-current text-purple-300" cx="13" cy="9" r="3" />
                 </g>
               </svg>
-              <h4 className="h4 mb-2">Customer Support</h4>
-              <p className="text-lg text-gray-400 text-center">Reduce wait times and improve service quality with AI-driven customer support agent</p>
+              <h4 className="h4 mb-2">Slack Integration</h4>
+              <p className="text-lg text-gray-400 text-center">Keep your team on the same page with meeting updates, ensuring everyone stays informed and aligned</p>
             </div>
 
             {/* 5th item */}
@@ -71,8 +71,8 @@ export default function Features() {
                   <path className="stroke-current text-purple-300" d="M22 30h4v12h-4z" />
                 </g>
               </svg>
-              <h4 className="h4 mb-2">Feedback & Survey</h4>
-              <p className="text-lg text-gray-400 text-center">Automate feedback and generates insights, allowing small businesses to make data-driven decisions</p>
+              <h4 className="h4 mb-2">Jira Integration</h4>
+              <p className="text-lg text-gray-400 text-center">Analyze meeting transcriptions in real-time and generate relevant Jira issues, assigning them to the right team members</p>
             </div>
 
             {/* 6th item */}
@@ -85,8 +85,8 @@ export default function Features() {
                   <path className="stroke-current text-purple-100" d="M8.86 1.18C3.8 1.988 0 5.6 0 10c0 5 4.9 9 11 9a10.55 10.55 0 003.1-.4L20 21l-.6-5.2a9.125 9.125 0 001.991-2.948" />
                 </g>
               </svg>
-              <h4 className="h4 mb-2">Order Tracking</h4>
-              <p className="text-lg text-gray-400 text-center">Offers real-time updates via WhatsApp, enhancing the customer experience with timely information</p>
+              <h4 className="h4 mb-2">GitHub Integration</h4>
+              <p className="text-lg text-gray-400 text-center">Leverage the power of automation by converting meeting discussions into GitHub issues effortlessly.</p>
             </div>
           </div>
           

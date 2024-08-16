@@ -23,7 +23,8 @@ export default function Hero() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h1 mb-4" data-aos="fade-up">Smart solutions for every business challenge</h1>
+            <h1 className="h1 mb-4" data-aos="fade-up"><span style={{color: '#5D5DFF'}}>Auto-Mate </span> Your Corporate Workflow</h1>
+            {/* <h1 className="h1 mb-4" data-aos="fade-up">Smart solutions for every business challenge</h1> */}
             <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">Enhance business productivity by leveraging Fetch.ai agents — Get transcripts, summaries, action items, and instant answers with AI agents!</p>
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
               <div data-aos="fade-up" data-aos-delay="400">

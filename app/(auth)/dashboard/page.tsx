@@ -20,7 +20,7 @@ export default function Dashboard() {
 
     useEffect(() => {
     // Fetch the list of meetings from your API
-        fetch('http://100.26.193.241:8080/transcripts')
+        fetch('https://myapi.zapto.org/transcripts')
         .then((res) => res.json())
         .then((data) => {
             if (data.transcripts) {
