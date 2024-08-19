@@ -95,7 +95,10 @@ export default function Dashboard() {
           body: JSON.stringify(requestBody),
         })
         .then((response) => response.json())
-        .then((data) => console.log('Slack Post Result:', data.result))
+        .then((data) => {
+            console.log('Slack Post Result:', data.result);
+            alert('Slack post successful!'); // Add this line for alert
+        })
         .catch((error) => console.error('Error processing Slack post:', error));
     }
     
@@ -118,7 +121,10 @@ export default function Dashboard() {
           body: JSON.stringify(requestBody),
         })
         .then((response) => response.json())
-        .then((data) => console.log('Jira Ticket Result:', data.result))
+        .then((data) => {
+            console.log('Jira Ticket Result:', data.result);
+            alert('Jira Ticket created successfully!'); // Add this line for alert
+        })
         .catch((error) => console.error('Error processing Jira ticket:', error));
     }
     
@@ -141,7 +147,10 @@ export default function Dashboard() {
           body: JSON.stringify(requestBody),
         })
         .then((response) => response.json())
-        .then((data) => console.log('GitHub Issue Result:', data))
+        .then((data) => {
+            console.log('Github Issue Result:', data.result);
+            alert('GitHub issue created successfully!'); // Add this line for alert
+        })
         .catch((error) => console.error('Error processing GitHub issue:', error));
     }
 
