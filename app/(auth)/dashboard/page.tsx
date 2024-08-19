@@ -198,21 +198,21 @@ export default function Dashboard() {
                       sx={{ marginBottom: 2, backgroundColor: "white" }}
                       rows={4}
                     />
-                    <Button variant="contained" sx={{ marginBottom: 2, color: "white" }} color="primary" onClick={handleQuerySubmit}>
+                    <Button variant="contained" sx={{ marginBottom: 2, color: "white", marginRight: 2 }} color="primary" onClick={handleQuerySubmit}>
                       Ask
                     </Button>
                     {/* New Slack Post button */}
-                    <Button variant="contained" sx={{ marginBottom: 2, color: "white" }} color="secondary" onClick={handleSlackPost}>
+                    <Button variant="contained" sx={{ marginBottom: 2, color: "white", marginRight: 2 }} color="secondary" onClick={handleSlackPost}>
                     Post to Slack
                     </Button>
 
                     {/* New Jira Ticket button */}
-                    <Button variant="contained" sx={{ marginBottom: 2, color: "white" }} color="primary" onClick={handleJiraTicket}>
+                    <Button variant="contained" sx={{ marginBottom: 2, color: "white", marginRight: 2 }} color="primary" onClick={handleJiraTicket}>
                     Create Jira Ticket
                     </Button>
 
                     {/* New GitHub Issue button */}
-                    <Button variant="contained" sx={{ marginBottom: 2, color: "white" }} color="secondary" onClick={handleGithubIssue}>
+                    <Button variant="contained" sx={{ marginBottom: 2, color: "white", marginRight: 2 }} color="secondary" onClick={handleGithubIssue}>
                     Create GitHub Issue
                     </Button>
 
