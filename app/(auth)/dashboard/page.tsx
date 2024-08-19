@@ -57,8 +57,9 @@ export default function Dashboard() {
             return;
         }
 
-        const apiEndpoint = `http://127.0.0.1:5000/ask-meeting/${selectedMeeting.id}`; // Replace with your GPT API endpoint
+        const apiEndpoint = `https://myapi.zapto.org/ask_meeting`; // The endpoint without the meeting ID in the URL
         const requestBody = { 
+            meeting_id: selectedMeeting.id, // Add the meeting_id to the body
             query: query  // The user's query
         };
         console.log(requestBody);
