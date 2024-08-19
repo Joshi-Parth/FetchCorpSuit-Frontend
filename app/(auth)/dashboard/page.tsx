@@ -75,6 +75,78 @@ export default function Dashboard() {
           .then((data) => setQueryResult(data.answer))
           .catch((error) => console.error('Error processing query:', error));
     }
+
+    function handleSlackPost() {
+        if (!selectedMeeting) {
+            console.error("No meeting selected");
+            return;
+        }
+    
+        const apiEndpoint = `https://myapi.zapto.org/slack_post`; // Endpoint for Slack post
+        const requestBody = { 
+            meeting_id: selectedMeeting.id
+        };
+    
+        fetch(apiEndpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(requestBody),
+        })
+        .then((response) => response.json())
+        .then((data) => console.log('Slack Post Result:', data.result))
+        .catch((error) => console.error('Error processing Slack post:', error));
+    }
+    
+    function handleJiraTicket() {
+        if (!selectedMeeting) {
+            console.error("No meeting selected");
+            return;
+        }
+    
+        const apiEndpoint = `https://myapi.zapto.org/jira_ticket`; // Endpoint for Jira ticket
+        const requestBody = { 
+            meeting_id: selectedMeeting.id
+        };
+    
+        fetch(apiEndpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(requestBody),
+        })
+        .then((response) => response.json())
+        .then((data) => console.log('Jira Ticket Result:', data.result))
+        .catch((error) => console.error('Error processing Jira ticket:', error));
+    }
+    
+    function handleGithubIssue() {
+        if (!selectedMeeting) {
+            console.error("No meeting selected");
+            return;
+        }
+    
+        const apiEndpoint = `https://myapi.zapto.org/github_issue`; // Endpoint for GitHub issue
+        const requestBody = { 
+            meeting_id: selectedMeeting.id
+        };
+    
+        fetch(apiEndpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(requestBody),
+        })
+        .then((response) => response.json())
+        .then((data) => console.log('GitHub Issue Result:', data))
+        .catch((error) => console.error('Error processing GitHub issue:', error));
+    }
+
+
+
     return (
         <Container maxWidth="lg" sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', border: "none" }}>
           <Grid container spacing={2}>
@@ -129,6 +201,21 @@ export default function Dashboard() {
                     <Button variant="contained" sx={{ marginBottom: 2, color: "white" }} color="primary" onClick={handleQuerySubmit}>
                       Ask
                     </Button>
+                    {/* New Slack Post button */}
+                    <Button variant="contained" sx={{ marginBottom: 2, color: "white" }} color="secondary" onClick={handleSlackPost}>
+                    Post to Slack
+                    </Button>
+
+                    {/* New Jira Ticket button */}
+                    <Button variant="contained" sx={{ marginBottom: 2, color: "white" }} color="primary" onClick={handleJiraTicket}>
+                    Create Jira Ticket
+                    </Button>
+
+                    {/* New GitHub Issue button */}
+                    <Button variant="contained" sx={{ marginBottom: 2, color: "white" }} color="secondary" onClick={handleGithubIssue}>
+                    Create GitHub Issue
+                    </Button>
+
                     {queryResult && (
                       <Paper elevation={3} sx={{ padding: 2, marginTop: 2 }}>
                         <Typography variant="h6">Response:</Typography>
